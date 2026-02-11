@@ -15,8 +15,8 @@ async function bootstrap() {
   }));
 
   const config = new DocumentBuilder()
-    .setTitle('Roque Ticket API')
-    .setDescription('API para gestionar ventas de tickets')
+    .setTitle('API COURSE')
+    .setDescription('API para gestionar cursos de una Institución')
     .setVersion('1.0')
     .addApiKey(
       { type: 'apiKey', name: 'x-api-key', in: 'header' },
