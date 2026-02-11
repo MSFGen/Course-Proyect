@@ -5,8 +5,6 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { TicketModule } from './ticket/ticket.module';
-import { EventModule } from './event/event.module';
 
 @Module({
   imports: [ ConfigModule.forRoot({isGlobal: true}),
