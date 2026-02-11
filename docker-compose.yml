@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:14.3
+    container_name: postgres_dev
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nest_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+
+  # backend:
+  #   image: node:lts-bullseye
+  #   container_name: nest_backend_dev
+  #   working_dir: /app
+  #   command: yarn start:dev
+  #   ports:
+  #     - "3000:3000"
+  #   env_file:
+  #     - ./backend/.env
+  #   volumes:
+  #     - ./backend:/app
+  #   depends_on:
+  #     - postgres
+
+  # frontend:
+  #   image: node:lts-bullseye
+  #   container_name: next_frontend_dev
+  #   working_dir: /app
+  #   command: yarn dev
+  #   ports:
+  #     - "3001:3000"
+  #   env_file:
+  #     - ./frontend/.env.local
+  #   volumes:
+  #     - ./frontend:/app
+  #     - ./frontend/node_modules:/app/node_modules  # monta tus node_modules locales
+  #   depends_on:
+  #     - backend
